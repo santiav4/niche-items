@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import TopNav from "./components/TopNav";
+import { AppBox } from "./components/StyledComponents";
+import HomeStore from "./components/HomeStore";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import StoreItems from "./components/StoreItems";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <AppBox className="App">
+            <TopNav />
+            <Routes>
+                <Route path="/" element={<HomeStore />} />
+
+                <Route path="/storeItems/:id" element={<StoreItems />} />
+            </Routes>
+        </AppBox>
+    );
 }
 
 export default App;
