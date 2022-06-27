@@ -15,11 +15,16 @@ const StorePreviewItems = ({ store }) => {
         setSliderStep((prevActiveStep) => prevActiveStep - 1);
     };
     return (
-        <Box sx={{ backgroundColor: "lightcyan" }}>
+        <Box
+            sx={{
+                backgroundColor: "lightcyan",
+                marginBottom: "10px",
+            }}>
             <Typography
                 sx={{
                     textAlign: "center",
                     backgroundColor: "lightgoldenrodyellow",
+                    fontWeight: "bold",
                 }}
                 variant="h3"
                 component="div"

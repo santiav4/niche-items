@@ -11,7 +11,7 @@ const HomeStore = () => {
     const stores = STORES_INFO;
     let { id } = useParams();
     return (
-        <Box>
+        <Box sx={{ padding: "0 10px" }}>
             {stores.map((store) => (
                 <StorePreviewItems key={store.id} store={store} />
             ))}
