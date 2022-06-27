@@ -3,13 +3,13 @@ import { AppBox } from "./components/StyledComponents";
 import HomeStore from "./components/HomeStore";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AllItems from "./components/AllItems";
-import { ButtonAppBar } from "./components/ButtonAppBar";
+import AppBar from "./components/AppBar";
 
 function App() {
     return (
         <AppBox className="App">
-            <TopNav />
-            <ButtonAppBar />
+            {/* <TopNav /> */}
+            <AppBar />
             <Routes>
                 <Route path="/" element={<HomeStore />} />
                 <Route path="/allItems/:id" element={<AllItems />} />
