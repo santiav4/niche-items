@@ -7,13 +7,17 @@ import { Link, useParams } from "react-router-dom";
 import { STORES_INFO } from "../data";
 import StorePreviewItems from "./StorePreviewItems";
 
-const HomeStore = () => {
+const HomeStore = ({ handleStoreId }) => {
     const stores = STORES_INFO;
     let { id } = useParams();
     return (
         <Box sx={{ padding: "0 10px" }}>
             {stores.map((store) => (
-                <StorePreviewItems key={store.id} store={store} />
+                <StorePreviewItems
+                    key={store.id}
+                    store={store}
+                    handleStoreId={handleStoreId}
+                />
             ))}
         </Box>
     );

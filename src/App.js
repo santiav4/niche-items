@@ -1,18 +1,36 @@
 import TopNav from "./components/TopNav";
+import { useState, useEffect } from "react";
 import { AppBox } from "./components/StyledComponents";
 import HomeStore from "./components/HomeStore";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AllItems from "./components/AllItems";
 import AppBar from "./components/AppBar";
-
+import ItemPage from "./components/ItemPage";
+import { STORES_INFO } from "./data";
 function App() {
+    const [storeName, setStoreName] = useState("");
+    const stores = STORES_INFO;
+
+    // console.log(stores[sliderStep].id);
+
+    const handleStoreId = (id) => {
+        console.log(id);
+        setStoreName(id);
+    };
     return (
         <AppBox className="App">
             {/* <TopNav /> */}
             <AppBar />
             <Routes>
-                <Route path="/" element={<HomeStore />} />
-                <Route path="/allItems/:id" element={<AllItems />} />
+                <Route
+                    path="/"
+                    element={<HomeStore handleStoreId={handleStoreId} />}
+                />
+                <Route path="allItems/:id" element={<AllItems />} />
+                <Route
+                    path={`/:id`}
+                    element={<ItemPage storeName={storeName} />}
+                />
             </Routes>
         </AppBox>
     );

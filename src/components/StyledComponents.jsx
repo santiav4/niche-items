@@ -4,4 +4,5 @@ import Box from "@mui/material/Box";
 export const AppBox = styled(Box)(() => ({
     backgroundColor: "lightblue",
     height: "100%",
+    color: "#3e4855",
 }));
