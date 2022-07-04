@@ -28,6 +28,7 @@ const ItemPage = ({ storeName }) => {
                 <Typography variant="h6" component="div" gutterBottom>
                     <Link
                         sx={{ textDecoration: "none", color: "inherit" }}
+                        target="_blank"
                         href={store.homePage}>
                         {storeName}
                     </Link>
@@ -53,12 +54,19 @@ const ItemPage = ({ storeName }) => {
             <Box
                 sx={{
                     border: "1px solid black",
-                    width: "100%",
+                    width: "296px",
                     height: "200px",
                     backgroundColor: "lightseagreen",
-                    marginBottom: "25px",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    margin: "0 auto 25px auto",
                 }}>
-                {store.image}
+                <img
+                    style={{ height: "100%", width: "100%" }}
+                    src={store.image[0][0]}
+                    alt=""
+                />
             </Box>
             <Divider />
             <Box sx={{ marginBottom: "25px" }}>

@@ -59,7 +59,11 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                             backgroundColor: "lightgreen",
                             margin: "0 auto 5px auto",
                         }}>
-                        {store.image[sliderStep]}
+                        <img
+                            style={{ height: "100%" }}
+                            src={store.image[sliderStep][0]}
+                            alt=""
+                        />
                     </Box>
                 </RouterLink>
                 <Box
