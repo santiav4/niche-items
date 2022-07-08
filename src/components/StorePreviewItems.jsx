@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link as RouterLink, useParams } from "react-router-dom";
@@ -7,7 +7,7 @@ import Carousel from "./Carousel";
 import Link from "@mui/material/Link";
 
 const StorePreviewItems = ({ store, handleStoreId }) => {
-    const [sliderStep, setSliderStep] = React.useState(0);
+    const [sliderStep, setSliderStep] = useState(0);
 
     const handleNextSlide = () => {
         setSliderStep((prevActiveStep) => prevActiveStep + 1);
@@ -16,6 +16,17 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
     const handlePrevSlide = () => {
         setSliderStep((prevActiveStep) => prevActiveStep - 1);
     };
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (sliderStep > 1) {
+                setSliderStep(0);
+                return;
+            }
+            handleNextSlide();
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, [sliderStep]);
     return (
         <Box
             sx={{
@@ -53,17 +64,30 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                     onClick={() => handleStoreId(store.store)}
                     to={`/${store.itemRoute[sliderStep]}`}>
                     <Box
-                        sx={{
-                            width: "80%",
+                        style={{
+                            width: "296px",
                             height: "200px",
                             backgroundColor: "lightgreen",
                             margin: "0 auto 5px auto",
+                            transtition: "300ms",
+                            overflow: "hidden",
                         }}>
-                        <img
-                            style={{ height: "100%" }}
-                            src={store.image[sliderStep][0]}
-                            alt=""
-                        />
+                        <Box
+                            className="slider-container"
+                            sx={{
+                                display: "flex",
+                                transform: `translateX(${sliderStep * -296}px)`,
+                                transtition: "300ms",
+                            }}>
+                            {store.image[0].map((src, index) => (
+                                <img
+                                    key={index}
+                                    style={{ height: "100%" }}
+                                    src={src}
+                                    alt={src}
+                                />
+                            ))}
+                        </Box>
                     </Box>
                 </RouterLink>
                 <Box
@@ -102,6 +126,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                     </RouterLink>
                 </Box>
                 <Carousel
+                    sliderStep={sliderStep}
                     handleNextSlide={handleNextSlide}
                     handlePrevSlide={handlePrevSlide}
                 />

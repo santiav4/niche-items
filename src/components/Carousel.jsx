@@ -8,32 +8,33 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 export default function DotsMobileStepper({
     handleNextSlide,
     handlePrevSlide,
+    sliderStep,
 }) {
-    const [activeStep, setActiveStep] = React.useState(0);
+    // const [activeStep, setActiveStep] = React.useState(0);
     const theme = useTheme();
 
-    const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        handleNextSlide();
-    };
+    // const handleNext = () => {
+    //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    //     handleNextSlide();
+    // };
 
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        handlePrevSlide();
-    };
+    // const handleBack = () => {
+    //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    //     handlePrevSlide();
+    // };
 
     return (
         <MobileStepper
             variant="dots"
             steps={3}
             position="static"
-            activeStep={activeStep}
+            activeStep={sliderStep}
             sx={{ flexGrow: 1, marginTop: "25px" }}
             nextButton={
                 <Button
                     size="small"
-                    onClick={handleNext}
-                    disabled={activeStep === 2}>
+                    onClick={handleNextSlide}
+                    disabled={sliderStep === 2}>
                     Next
                     {theme.direction === "rtl" ? (
                         <KeyboardArrowLeft />
@@ -45,8 +46,8 @@ export default function DotsMobileStepper({
             backButton={
                 <Button
                     size="small"
-                    onClick={handleBack}
-                    disabled={activeStep === 0}>
+                    onClick={handlePrevSlide}
+                    disabled={sliderStep === 0}>
                     {theme.direction === "rtl" ? (
                         <KeyboardArrowRight />
                     ) : (

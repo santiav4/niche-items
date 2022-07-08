@@ -1,5 +1,6 @@
 import hagoromo1 from "./images/hagoromo1.jpeg";
 import hagoromo2 from "./images/hagoromo2.jpg";
+import hagoromo3 from "./images/hagoromo3.jpg";
 export const STORES_INFO = [
     {
         id: 0,
@@ -52,7 +53,11 @@ export const STORES_INFO = [
         ],
         itemRoute: ["hagoromo-chalk", "cpu", "graphicsCard"],
         price: [10, 20, 30],
-        image: [[hagoromo1, hagoromo2], [hagoromo2, hagoromo1], "Image 3"],
+        image: [
+            [hagoromo1, hagoromo2, hagoromo3],
+            [hagoromo2, hagoromo1],
+            "Image 3",
+        ],
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos cumque obcaecati aspernatur assumenda ipsam, voluptatibus aliquid nam omnis eveniet iure facilis esse eaque non quasi voluptatem quae repudiandae exercitationem.",
         link: [
@@ -94,7 +99,7 @@ export const STORES_INFO = [
         ],
         itemRoute: ["iPad", "iPhone", "MACBookPro"],
         price: [40, 50, 60],
-        image: [[hagoromo1], "Image 2", "Image 3"],
+        image: [[hagoromo3, hagoromo2, hagoromo1], "Image 2", "Image 3"],
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos cumque obcaecati aspernatur assumenda ipsam, voluptatibus aliquid nam omnis eveniet iure facilis esse eaque non quasi voluptatem quae repudiandae exercitationem.",
         link: [
@@ -136,7 +141,7 @@ export const STORES_INFO = [
         ],
         itemRoute: ["gamingChair", "Desktop", "Headphones"],
         price: [70, 80, 90],
-        image: [[hagoromo1, hagoromo2], "Image 2", "Image 3"],
+        image: [[hagoromo2, hagoromo3, hagoromo1], "Image 2", "Image 3"],
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quos cumque obcaecati aspernatur assumenda ipsam, voluptatibus aliquid nam omnis eveniet iure facilis esse eaque non quasi voluptatem quae repudiandae exercitationem.",
         link: [
