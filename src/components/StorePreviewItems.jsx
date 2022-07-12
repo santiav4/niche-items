@@ -27,6 +27,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
         }, 5000);
         return () => clearTimeout(timer);
     }, [sliderStep]);
+
     return (
         <Box
             sx={{
@@ -48,7 +49,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                     sx={{ color: "#3e4855" }}
                     target={"_blank"}
                     href={store.homePage}>
-                    {store.store}
+                    {store.store.replace(/-/gi, " ")}
                 </Link>
             </Typography>
 
@@ -62,7 +63,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                 {/* Store item image */}
                 <RouterLink
                     onClick={() => handleStoreId(store.store)}
-                    to={`/${store.itemRoute[sliderStep]}`}>
+                    to={`${store.store}/${store.allItems[sliderStep].route}`}>
                     <Box
                         style={{
                             width: "296px",
@@ -112,6 +113,9 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                     </Link>
 
                     <RouterLink
+                        onClick={() => {
+                            handleStoreId(store.store);
+                        }}
                         style={{ textDecoration: "none" }}
                         to={`/allItems/${store.store}`}>
                         <Button

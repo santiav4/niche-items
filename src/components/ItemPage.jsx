@@ -9,12 +9,12 @@ import Link from "@mui/material/Link";
 const ItemPage = ({ storeName }) => {
     let { id } = useParams();
     let store = STORES_INFO.filter((store) => store.store === storeName)[0];
-    let name = store.itemRoute.indexOf(id);
+    // let name = store.itemRoute.indexOf(id);
 
     console.log("default useParams: ", useParams());
     console.log("useparams: ", id);
     console.log("Filtered Store: ", store, "Store Name: ", storeName);
-    console.log("index of item Name:", name);
+    // console.log("index of item Name:", name);
 
     return (
         <Box
@@ -30,11 +30,11 @@ const ItemPage = ({ storeName }) => {
                         sx={{ textDecoration: "none", color: "inherit" }}
                         target="_blank"
                         href={store.homePage}>
-                        {storeName}
+                        {storeName.replace(/-/gi, " ")}
                     </Link>
                     /
                     <span style={{ color: "lightgray" }}>
-                        {store.itemName[name]}
+                        {store.allItems[id].name}
                     </span>
                 </Typography>
             </Box>
@@ -44,7 +44,7 @@ const ItemPage = ({ storeName }) => {
                     <Link
                         sx={{ textDecoration: "none", color: "inherit" }}
                         href={store.homePage}>
-                        Visit {store.store} store
+                        Visit {store.store.replace(/-/gi, " ")} store
                     </Link>
                 </Typography>
                 <Typography variant="body1" component="div" gutterBottom>
@@ -64,7 +64,7 @@ const ItemPage = ({ storeName }) => {
                 }}>
                 <img
                     style={{ height: "100%", width: "100%" }}
-                    src={store.image[0][0]}
+                    src={store.allItems[id].image}
                     alt=""
                 />
             </Box>
@@ -75,12 +75,12 @@ const ItemPage = ({ storeName }) => {
                     variant="h6"
                     component="div"
                     gutterBottom>
-                    Price: ${store.price[name]}
+                    Price: ${store.allItems[id].price}
                 </Typography>
                 <Link
                     sx={{ textDecoration: "none" }}
                     target="_blank"
-                    href={store.link[name]}>
+                    href={store.allItems[id].link}>
                     <Button sx={{ width: "100%" }} variant="contained">
                         Buy Now
                     </Button>

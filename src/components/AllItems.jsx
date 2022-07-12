@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { AMAZON_ITEMS, STORES_INFO } from "../data";
+import Link from "@mui/material/Link";
+import { Link as RouterLink } from "react-router-dom";
 const AllItems = () => {
     let { id } = useParams();
     console.log(useParams());
@@ -15,7 +17,7 @@ const AllItems = () => {
             }}>
             <Box>
                 <Typography variant="h6" component="div" gutterBottom>
-                    {id}/All Items
+                    {id.replace(/-/gi, " ")}/All Items
                 </Typography>
             </Box>
             <Box>
@@ -32,9 +34,10 @@ const AllItems = () => {
                     flexWrap: "wrap",
                 }}>
                 {store.allItems.map((item) => (
-                    <Box
+                    <RouterLink
+                        to={`/${store.store}/${item.route}`}
                         key={item.id}
-                        sx={{
+                        style={{
                             border: "1px solid black",
                             width: "180px",
                             marginBottom: "10px",
@@ -61,7 +64,7 @@ const AllItems = () => {
                             gutterBottom>
                             Price: ${item.price}
                         </Typography>
-                    </Box>
+                    </RouterLink>
                 ))}
                 {/* if number is odd make a spacer */}
             </Box>

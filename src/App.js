@@ -14,7 +14,7 @@ function App() {
     // console.log(stores[sliderStep].id);
 
     const handleStoreId = (id) => {
-        console.log(id);
+        console.log("Store Name:", id);
         setStoreName(id);
     };
     return (
@@ -26,11 +26,11 @@ function App() {
                     path="/"
                     element={<HomeStore handleStoreId={handleStoreId} />}
                 />
-                <Route path="allItems/:id" element={<AllItems />} />
                 <Route
-                    path={`/:id`}
+                    path={`${storeName}/:id`}
                     element={<ItemPage storeName={storeName} />}
                 />
+                <Route path="allItems/:id" element={<AllItems />} />
             </Routes>
         </AppBox>
     );
