@@ -62,7 +62,9 @@ export default function Navbar({ handleStoreId }) {
                 </div>
 
                 {stores.map((store) => (
-                    <div onClick={() => handleStoreId(store.id)} key={store.id}>
+                    <div
+                        onClick={() => handleStoreId(store.store)}
+                        key={store.id}>
                         <Link to={`allItems/${store.store}`}>
                             {store.store}
                         </Link>
