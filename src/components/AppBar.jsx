@@ -20,6 +20,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
 import { Link as RouterLink } from "react-router-dom";
+import { STORES_INFO as stores } from "../data.js";
 
 const drawerWidth = 240;
 
@@ -68,7 +69,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     justifyContent: "flex-start",
 }));
 
-export default function PersistentDrawerRight() {
+export default function PersistentDrawerRight({ handleStoreId }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -81,17 +82,31 @@ export default function PersistentDrawerRight() {
     };
 
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box
+            className="app-bar-box"
+            sx={{ display: "flex", backgroundColor: "#EAE7DC" }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar
+                sx={{
+                    backgroundColor: "#EAE7DC",
+                    color: "#3e4855",
+                    boxShadow: "none",
+                    borderBottom: "1px solid #D8C3A5 ",
+                }}
+                position="fixed"
+                open={open}>
                 <Toolbar>
                     <Typography
-                        variant="h6"
+                        variant="h4"
                         noWrap
                         sx={{ flexGrow: 1 }}
                         component="div">
                         <RouterLink
-                            style={{ textDecoration: "none", color: "white" }}
+                            style={{
+                                textDecoration: "none",
+                                fontWeight: "bold",
+                                color: "#3e4855",
+                            }}
                             to="/">
                             LOGO
                         </RouterLink>
@@ -101,7 +116,9 @@ export default function PersistentDrawerRight() {
                         aria-label="open drawer"
                         edge="end"
                         onClick={handleDrawerOpen}
-                        sx={{ ...(open && { display: "none" }) }}>
+                        sx={{
+                            ...(open && { display: "none" }),
+                        }}>
                         <MenuIcon />
                     </IconButton>
                 </Toolbar>
@@ -131,22 +148,48 @@ export default function PersistentDrawerRight() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {["Inbox", "Starred", "Send email", "Drafts"].map(
-                        (text, index) => (
-                            <ListItem key={text} disablePadding>
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? (
-                                            <InboxIcon />
-                                        ) : (
-                                            <MailIcon />
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => handleStoreId("/")}>
+                            <ListItemIcon>
+                                <MailIcon />
+                            </ListItemIcon>
+                            <RouterLink
+                                to={`/`}
+                                style={{
+                                    textDecoration: "none",
+                                    color: "inherit",
+                                }}>
+                                <ListItemText primary={"Home"} />
+                            </RouterLink>
+                        </ListItemButton>
+                    </ListItem>
+                    {stores.map((store, index) => (
+                        <ListItem key={store.id} disablePadding>
+                            <ListItemButton
+                                onClick={() => handleStoreId(store.store)}>
+                                <ListItemIcon>
+                                    {index % 2 === 0 ? (
+                                        <InboxIcon />
+                                    ) : (
+                                        <MailIcon />
+                                    )}
+                                </ListItemIcon>
+                                <RouterLink
+                                    to={`/allItems/${store.store}`}
+                                    style={{
+                                        textDecoration: "none",
+                                        color: "inherit",
+                                    }}>
+                                    <ListItemText
+                                        primary={store.store.replace(
+                                            /-/gi,
+                                            " "
                                         )}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
-                                </ListItemButton>
-                            </ListItem>
-                        )
-                    )}
+                                    />
+                                </RouterLink>
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
                 </List>
                 <Divider />
                 <List>

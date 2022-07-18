@@ -10,11 +10,7 @@ const AllItems = () => {
     let store = STORES_INFO.filter((store) => store.store.includes(id))[0];
     console.log(store);
     return (
-        <Box
-            sx={{
-                backgroundColor: "lightcoral",
-                padding: "0 10px",
-            }}>
+        <Box className="all-items">
             <Box>
                 <Typography variant="h6" component="div" gutterBottom>
                     {id.replace(/-/gi, " ")}/All Items
@@ -35,16 +31,12 @@ const AllItems = () => {
                 }}>
                 {store.allItems.map((item) => (
                     <RouterLink
+                        className="all-items-card"
                         to={`/${store.store}/${item.route}`}
-                        key={item.id}
-                        style={{
-                            border: "1px solid black",
-                            width: "180px",
-                            marginBottom: "10px",
-                        }}>
-                        <Box
-                            sx={{ border: "1px solid black", height: "120px" }}>
+                        key={item.id}>
+                        <Box className="all-items-image-container">
                             <Box
+                                className="all-items-image"
                                 sx={{
                                     backgroundSize: "100%,100%",
                                     backgroundRepeat: "no-repeat",

@@ -20,7 +20,7 @@ function App() {
     return (
         <AppBox className="App">
             {/* <TopNav /> */}
-            <AppBar />
+            <AppBar sx={{ bgColor: "red" }} handleStoreId={handleStoreId} />
             <Routes>
                 <Route
                     path="/"

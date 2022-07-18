@@ -31,14 +31,15 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
     return (
         <Box
             sx={{
-                backgroundColor: "lightcyan",
+                backgroundColor: "#D8C3A5",
                 marginBottom: "25px",
                 zIndex: "9",
+                paddingTop: "10px",
             }}>
             <Typography
                 sx={{
                     textAlign: "center",
-                    backgroundColor: "lightgoldenrodyellow",
+
                     fontWeight: "bold",
                 }}
                 variant="h3"
@@ -106,6 +107,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                                 marginBottom: "5px",
                                 width: "120px",
                                 borderRadius: "0",
+                                backgroundColor: "#E85A4F",
                             }}
                             variant="contained">
                             Buy
@@ -123,6 +125,8 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                                 marginBottom: "5px",
                                 width: "120px",
                                 borderRadius: "0",
+                                borderColor: "#E85A4F",
+                                color: "#E85A4F",
                             }}
                             variant="outlined">
                             All Items
