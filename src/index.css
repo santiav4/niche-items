@@ -35,8 +35,18 @@ code {
 /* Styles for App Bar                  */
 /*==================================== */
 
-.app-bar-box {
-    height: 80px;
+.navbar {
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar h1 {
+    margin: 0;
 }
 
 .app-bar {
@@ -44,8 +54,31 @@ code {
     box-shadow: none;
 }
 
-.hamburguer-menu {
-    font-size: 60px;
+.menu {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+
+    top: 0;
+    z-index: 20;
+
+    overflow: visible;
+
+    background-color: white;
+
+    transition: all 300ms;
+
+    width: 50%;
+}
+
+.menu-open {
+    /* : -10px; */
+    position: fixed;
+    transform: translateX(0%);
+}
+
+.menu-close {
+    /* left: 0px; */
 }
 
 /* =================================== */

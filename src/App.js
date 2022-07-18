@@ -4,7 +4,7 @@ import { AppBox } from "./components/StyledComponents";
 import HomeStore from "./components/HomeStore";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AllItems from "./components/AllItems";
-import AppBar from "./components/AppBar";
+import Navbar from "./components/Navbar";
 import ItemPage from "./components/ItemPage";
 import { STORES_INFO } from "./data";
 function App() {
@@ -20,7 +20,7 @@ function App() {
     return (
         <AppBox className="App">
             {/* <TopNav /> */}
-            <AppBar sx={{ bgColor: "red" }} handleStoreId={handleStoreId} />
+            <Navbar sx={{ bgColor: "red" }} handleStoreId={handleStoreId} />
             <Routes>
                 <Route
                     path="/"
