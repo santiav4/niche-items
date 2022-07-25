@@ -28,8 +28,6 @@ export default function Navbar({ handleStoreId }) {
             className="navbar"
             style={{
                 backgroundColor: "#EAE7DC",
-                border: "1px solid red",
-                postition: "relative",
                 overflow: "hidden",
             }}>
             <h1 style={{}}>
@@ -38,6 +36,7 @@ export default function Navbar({ handleStoreId }) {
                         textDecoration: "none",
                         fontWeight: "bold",
                         color: "#3e4855",
+                        marginLeft: "15px",
                     }}
                     to="/">
                     LOGO
@@ -47,6 +46,7 @@ export default function Navbar({ handleStoreId }) {
                 className="menu-icon-closed"
                 size={32}
                 onClick={handleDrawerOpen}
+                style={{ marginRight: "15px" }}
             />
             <div
                 style={{}}
