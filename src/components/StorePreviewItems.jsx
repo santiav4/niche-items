@@ -108,6 +108,9 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                                 width: "120px",
                                 borderRadius: "0",
                                 backgroundColor: "#E85A4F",
+                                "&:hover": {
+                                    backgroundColor: "#E98074",
+                                },
                             }}
                             variant="contained">
                             Buy
@@ -127,6 +130,11 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                                 borderRadius: "0",
                                 borderColor: "#E85A4F",
                                 color: "#E85A4F",
+                                "&:hover": {
+                                    borderColor: "#E98074",
+                                    color: "#E98074",
+                                    backgroundColor: "#EAE7DC",
+                                },
                             }}
                             variant="outlined">
                             All Items

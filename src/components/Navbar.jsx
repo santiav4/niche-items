@@ -30,6 +30,7 @@ export default function Navbar({ handleStoreId }) {
                 backgroundColor: "#EAE7DC",
                 border: "1px solid red",
                 postition: "relative",
+                overflow: "hidden",
             }}>
             <h1 style={{}}>
                 <Link
@@ -47,7 +48,9 @@ export default function Navbar({ handleStoreId }) {
                 size={32}
                 onClick={handleDrawerOpen}
             />
-            <div className={isOpen ? "menu menu-open" : "menu menu-close"}>
+            <div
+                style={{}}
+                className={isOpen ? "menu menu-open" : "menu menu-close"}>
                 <div
                     style={{
                         textAlign: "right",
@@ -60,7 +63,7 @@ export default function Navbar({ handleStoreId }) {
                         size={32}
                     />
                 </div>
-
+                {/* List items  */}
                 {stores.map((store) => (
                     <div
                         onClick={() => handleStoreId(store.store)}
