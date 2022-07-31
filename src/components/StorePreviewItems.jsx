@@ -122,7 +122,8 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                             handleStoreId(store.store);
                         }}
                         style={{ textDecoration: "none" }}
-                        to={`/allItems/${store.store}`}>
+                        to={`${store.store}`}>
+                        {/* to={`/allItems/${store.store}`}> */}
                         <Button
                             sx={{
                                 marginBottom: "5px",

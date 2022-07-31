@@ -8,12 +8,32 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 const ItemPage = ({ storeName }) => {
     let { id } = useParams();
-    let store = STORES_INFO.filter((store) => store.store === storeName)[0];
+    console.log("last index:", +id.charAt(id.length - 1));
+
+    // Identify store with store name
+    let storeFiltered = STORES_INFO.filter(
+        (storeFiltered) =>
+            storeFiltered.store.toLowerCase().replace(/-/gi, "") ===
+            id.replace(id.charAt(id.length - 1), "")
+    )[0];
+    console.log("Store name filtered:", storeFiltered);
+
+    // Identify which product is selected
+    console.log("Router Id:", id);
+    let selectedProduct = storeFiltered.allItems.filter(
+        (product) => product.route === id
+    )[0];
+    let itemId = +id.replace(
+        storeFiltered.store.toLowerCase().replace(/-/gi, ""),
+        ""
+    );
+    console.log("selectedProduct: ", selectedProduct);
+    console.log("item Id", itemId);
     // let name = store.itemRoute.indexOf(id);
 
     console.log("default useParams: ", useParams());
     console.log("useparams: ", id);
-    console.log("Filtered Store: ", store, "Store Name: ", storeName);
+    // console.log("Filtered Store: ", store, "Store Name: ", storeName);
     // console.log("index of item Name:", name);
 
     return (
@@ -29,12 +49,12 @@ const ItemPage = ({ storeName }) => {
                     <Link
                         sx={{ textDecoration: "none", color: "inherit" }}
                         target="_blank"
-                        href={store.homePage}>
-                        {storeName.replace(/-/gi, " ")}
+                        href={storeFiltered.homePage}>
+                        {storeFiltered.store.replace(/-/gi, " ")}
                     </Link>
-                    /
+                    /{/* Product Name  */}
                     <span style={{ color: "lightgray" }}>
-                        {store.allItems[id].name}
+                        {selectedProduct.name}
                     </span>
                 </Typography>
             </Box>
@@ -42,13 +62,14 @@ const ItemPage = ({ storeName }) => {
             <Box sx={{ margin: "25px 0" }}>
                 <Typography variant="h6" component="div" gutterBottom>
                     <Link
+                        target="_blank"
                         sx={{ textDecoration: "none", color: "inherit" }}
-                        href={store.homePage}>
-                        Visit {store.store.replace(/-/gi, " ")} store
+                        href={storeFiltered.homePage}>
+                        Visit {storeFiltered.store.replace(/-/gi, " ")} store
                     </Link>
                 </Typography>
                 <Typography variant="body1" component="div" gutterBottom>
-                    {store.description}
+                    {storeFiltered.description}
                 </Typography>
             </Box>
             <Box
@@ -64,7 +85,7 @@ const ItemPage = ({ storeName }) => {
                 }}>
                 <img
                     style={{ height: "100%", width: "100%" }}
-                    src={store.allItems[id].image}
+                    src={selectedProduct.image}
                     alt=""
                 />
             </Box>
@@ -75,12 +96,12 @@ const ItemPage = ({ storeName }) => {
                     variant="h6"
                     component="div"
                     gutterBottom>
-                    Price: ${store.allItems[id].price}
+                    Price: ${selectedProduct.price}
                 </Typography>
                 <Link
                     sx={{ textDecoration: "none" }}
                     target="_blank"
-                    href={store.allItems[id].link}>
+                    href={selectedProduct.link}>
                     <Button sx={{ width: "100%" }} variant="contained">
                         Buy Now
                     </Button>

@@ -6,9 +6,10 @@ import Link from "@mui/material/Link";
 import { Link as RouterLink } from "react-router-dom";
 const AllItems = () => {
     let { id } = useParams();
-    console.log(useParams());
+    console.log(`useParams id: ${id}`);
     let store = STORES_INFO.filter((store) => store.store.includes(id))[0];
     console.log(store);
+
     return (
         <Box className="all-items">
             <Box>
@@ -32,7 +33,7 @@ const AllItems = () => {
                 {store.allItems.map((item) => (
                     <RouterLink
                         className="all-items-card"
-                        to={`/${store.store}/${item.route}`}
+                        to={`/${id}/${item.route}`}
                         key={item.id}>
                         <Box className="all-items-image-container">
                             <Box
@@ -58,7 +59,6 @@ const AllItems = () => {
                         </Typography>
                     </RouterLink>
                 ))}
-                {/* if number is odd make a spacer */}
             </Box>
         </Box>
     );

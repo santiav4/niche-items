@@ -24,12 +24,7 @@ export default function Navbar({ handleStoreId }) {
     }, [isOpen]);
 
     return (
-        <div
-            className="navbar"
-            style={{
-                backgroundColor: "#EAE7DC",
-                overflow: "hidden",
-            }}>
+        <div className="navbar" style={{}}>
             <h1 style={{}}>
                 <Link
                     style={{
