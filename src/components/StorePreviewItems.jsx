@@ -29,12 +29,13 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
     }, [sliderStep]);
 
     return (
-        <Box
-            sx={{
-                backgroundColor: "#D8C3A5",
+        <div
+            className="home-cards"
+            style={{
                 marginBottom: "25px",
                 zIndex: "9",
                 paddingTop: "10px",
+                padding: "10px 20px",
             }}>
             <Typography
                 sx={{
@@ -55,24 +56,18 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
             </Typography>
 
             <Box sx={{ width: "100%" }}>
-                <Typography
-                    sx={{ fontWeight: "bold" }}
-                    variant="body2"
-                    gutterBottom>
-                    {store.itemName[sliderStep]}
-                </Typography>
                 {/* Store item image */}
                 <RouterLink
                     onClick={() => handleStoreId(store.store)}
                     to={`${store.store}/${store.allItems[sliderStep].route}`}>
-                    <Box
+                    <div
                         style={{
                             width: "296px",
                             height: "200px",
-                            backgroundColor: "lightgreen",
                             margin: "0 auto 5px auto",
                             transtition: "300ms",
                             overflow: "hidden",
+                            borderRadius: "20px",
                         }}>
                         <Box
                             className="slider-container"
@@ -90,12 +85,32 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                                 />
                             ))}
                         </Box>
-                    </Box>
+                    </div>
                 </RouterLink>
+                <Typography
+                    sx={{
+                        fontWeight: "bold",
+                        marginTop: "25px",
+                        textAlign: "center",
+                    }}
+                    variant="body2"
+                    gutterBottom>
+                    {store.allItems[sliderStep].name}
+                </Typography>
+                <Typography
+                    sx={{
+                        fontWeight: "bold",
+                        margin: "10px 0",
+                        textAlign: "center",
+                    }}
+                    variant="body2"
+                    gutterBottom>
+                    {`Price: $${store.allItems[sliderStep].price}.00`}
+                </Typography>
                 <Box
                     sx={{
                         display: "flex",
-                        justifyContent: "space-evenly",
+                        justifyContent: "space-around",
                         alignItems: "center",
                     }}>
                     <Link
@@ -106,10 +121,10 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                             sx={{
                                 marginBottom: "5px",
                                 width: "120px",
-                                borderRadius: "0",
-                                backgroundColor: "#E85A4F",
+                                borderRadius: "10px",
+                                backgroundColor: "#FF4D4E",
                                 "&:hover": {
-                                    backgroundColor: "#E98074",
+                                    backgroundColor: "#FF4D4E",
                                 },
                             }}
                             variant="contained">
@@ -128,7 +143,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                             sx={{
                                 marginBottom: "5px",
                                 width: "120px",
-                                borderRadius: "0",
+                                borderRadius: "10px",
                                 borderColor: "#E85A4F",
                                 color: "#E85A4F",
                                 "&:hover": {
@@ -148,7 +163,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                     handlePrevSlide={handlePrevSlide}
                 />
             </Box>
-        </Box>
+        </div>
     );
 };
 

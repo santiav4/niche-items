@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { STORES_INFO as stores } from "../data.js";
 
 import { useState, useEffect } from "react";
+import TemporaryDrawer from "./TemporaryDrawer.jsx";
 
-export default function Navbar({ handleStoreId }) {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleDrawerOpen = () => {
@@ -37,39 +38,8 @@ export default function Navbar({ handleStoreId }) {
                     LOGO
                 </Link>
             </h1>
-            <HiMenuAlt1
-                className="menu-icon-closed"
-                size={32}
-                onClick={handleDrawerOpen}
-                style={{ marginRight: "15px" }}
-            />
-            <div
-                style={{}}
-                className={isOpen ? "menu menu-open" : "menu menu-close"}>
-                <div
-                    style={{
-                        textAlign: "right",
-                        padding: "10px 10px 0 0",
-                        color: "#3e4855",
-                    }}>
-                    <GrClose
-                        style={{ color: "#3e4855" }}
-                        onClick={handleDrawerClose}
-                        size={32}
-                    />
-                </div>
-                {/* List items  */}
-                {stores.map((store) => (
-                    <div
-                        onClick={() => handleStoreId(store.store)}
-                        key={store.id}>
-                        <Link to={`allItems/${store.store}`}>
-                            {store.store}
-                        </Link>
-                        <hr />
-                    </div>
-                ))}
-            </div>
+
+            <TemporaryDrawer stores={stores} />
         </div>
     );
 }

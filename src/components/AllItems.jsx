@@ -48,14 +48,16 @@ const AllItems = () => {
                         <Typography
                             variant="subtitle1"
                             component="div"
-                            gutterBottom>
+                            gutterBottom
+                            sx={{ marginLeft: "5px", textAlign: "center" }}>
                             {item.name}
                         </Typography>
                         <Typography
                             variant="subtitle1"
                             component="div"
-                            gutterBottom>
-                            Price: ${item.price}
+                            gutterBottom
+                            sx={{ marginLeft: "5px", textAlign: "center" }}>
+                            Price: ${item.price}.00
                         </Typography>
                     </RouterLink>
                 ))}

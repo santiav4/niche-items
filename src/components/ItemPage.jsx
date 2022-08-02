@@ -37,10 +37,10 @@ const ItemPage = ({ storeName }) => {
     // console.log("index of item Name:", name);
 
     return (
-        <Box
-            sx={{
+        <div
+            style={{
                 height: "100vh",
-                backgroundColor: "lightcoral",
+                backgroundColor: "#edebe0",
                 padding: "0 10px",
             }}>
             {/* ItemPage of {storeName} and item is {store.itemName[name]} */}
@@ -58,7 +58,7 @@ const ItemPage = ({ storeName }) => {
                     </span>
                 </Typography>
             </Box>
-            <Divider sx={{ width: "100%", maring: "25px 0" }} />
+            {/* <Divider sx={{ width: "100%", maring: "25px 0" }} /> */}
             <Box sx={{ margin: "25px 0" }}>
                 <Typography variant="h6" component="div" gutterBottom>
                     <Link
@@ -74,7 +74,7 @@ const ItemPage = ({ storeName }) => {
             </Box>
             <Box
                 sx={{
-                    border: "1px solid black",
+                    borderRadius: "20px",
                     width: "296px",
                     height: "200px",
                     backgroundColor: "lightseagreen",
@@ -102,13 +102,22 @@ const ItemPage = ({ storeName }) => {
                     sx={{ textDecoration: "none" }}
                     target="_blank"
                     href={selectedProduct.link}>
-                    <Button sx={{ width: "100%" }} variant="contained">
+                    <Button
+                        sx={{
+                            width: "100%",
+                            borderRadius: "20px",
+                            backgroundColor: "#FF4D4E",
+                            "&:hover": {
+                                backgroundColor: "#FF4D4E",
+                            },
+                        }}
+                        variant="contained">
                         Buy Now
                     </Button>
                 </Link>
             </Box>
-            <Divider />
-        </Box>
+            {/* <Divider /> */}
+        </div>
     );
 };
 

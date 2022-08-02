@@ -26,21 +26,27 @@ export default function DotsMobileStepper({
     return (
         <MobileStepper
             variant="dots"
-            color="red"
             steps={3}
             position="static"
             activeStep={sliderStep}
+            className=""
             sx={{
                 flexGrow: 1,
                 marginTop: "25px",
-                backgroundColor: "#D8C3A5",
+                backgroundColor: "#edebe0",
+                borderRadius: "5px",
+                "& .MuiMobileStepper-dotActive": {
+                    backgroundColor: "#A06448",
+                },
             }}
             nextButton={
                 <Button
                     size="small"
                     onClick={handleNextSlide}
                     disabled={sliderStep === 2}
-                    sx={{ color: "#E98074" }}>
+                    sx={{
+                        color: "#3e4855",
+                    }}>
                     Next
                     {theme.direction === "rtl" ? (
                         <KeyboardArrowLeft />
@@ -54,7 +60,7 @@ export default function DotsMobileStepper({
                     size="small"
                     onClick={handlePrevSlide}
                     disabled={sliderStep === 0}
-                    sx={{ color: "#E98074" }}>
+                    sx={{ color: "#3e4855" }}>
                     {theme.direction === "rtl" ? (
                         <KeyboardArrowRight />
                     ) : (

@@ -4,11 +4,12 @@
 #8E8D8A grey
 #E98074 light red
 #E85A4F red
-#F7F6F2 crema test
+#edebe0 crema test
+#FF4D4E orange test contrast
 */
 
 html {
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
 }
 
 body {
@@ -34,8 +35,9 @@ code {
 }
 
 .App {
-    background-color: #f7f6f2;
-    overflow-x: hidden;
+    background-color: #edebe0;
+    /* overflow-x: hidden; */
+    /* position: relative; */
 }
 
 /* =================================== */
@@ -44,19 +46,24 @@ code {
 
 .navbar {
     height: 50px;
-    margin-bottom: 20px;
+    /* margin-bottom: 100vh; */
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: sticky;
+    top: 0;
 
     width: 100%;
     z-index: 20;
 
-    background-color: #f7f6f2;
+    background-color: #edebe0;
     /* border-bottom: 1px solid black */
     border-bottom: 1px solid #ada79b;
+
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .navbar h1 {
@@ -95,7 +102,18 @@ code {
 /* =================================== */
 /* Homepage                            */
 /*==================================== */
+.home-cards {
+    border: 1px solid #ada79b;
+    border-radius: 20px;
+}
 
+.slider-image {
+    border-radius: 5px;
+}
+/* =================================== */
+/* Carousel                            */
+/*==================================== */
+/* mui component  */
 /* =================================== */
 /* Styles for all items page           */
 /*==================================== */
@@ -107,14 +125,15 @@ code {
 
 .all-items-card {
     overflow: hidden;
-    border-radius: 10px;
-    border: none;
+    border-radius: 20px;
+    border: 1px solid #ada79b;
 
-    background-color: lightsalmon;
-
-    width: 180px;
+    width: 175px;
     margin-bottom: 10px;
-    padding: 2px;
+    /* padding: 2px; */
+
+    text-decoration: none;
+    color: #3e4855;
 }
 
 .all-items-image-container {
@@ -124,4 +143,8 @@ code {
 }
 
 .all-items-image {
+}
+
+.MuiMobileStepper-dot {
+    color: red;
 }

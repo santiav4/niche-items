@@ -10,7 +10,7 @@ export const STORES_INFO = [
         allItems: [
             {
                 id: 0,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 1",
                 price: 5,
                 image: hagoromo1,
                 route: "amazon0",
@@ -18,7 +18,7 @@ export const STORES_INFO = [
             },
             {
                 id: 1,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 2",
                 price: 10,
                 image: hagoromo2,
                 route: "amazon1",
@@ -26,7 +26,7 @@ export const STORES_INFO = [
             },
             {
                 id: 2,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 3",
                 price: 15,
                 image: hagoromo3,
                 route: "amazon2",
@@ -34,7 +34,7 @@ export const STORES_INFO = [
             },
             {
                 id: 3,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 4",
                 price: 20,
                 image: hagoromo1,
                 route: "amazon3",
@@ -42,7 +42,7 @@ export const STORES_INFO = [
             },
             {
                 id: 4,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 5",
                 price: 25,
                 image: hagoromo2,
                 route: "amazon4",
@@ -50,7 +50,7 @@ export const STORES_INFO = [
             },
             {
                 id: 5,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 6",
                 price: 30,
                 image: hagoromo3,
                 route: "amazon5",
@@ -58,7 +58,7 @@ export const STORES_INFO = [
             },
             {
                 id: 6,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 7",
                 price: 35,
                 image: hagoromo1,
                 route: "amazon6",
@@ -167,7 +167,7 @@ export const STORES_INFO = [
         allItems: [
             {
                 id: 0,
-                name: "Hagaromo Chalk",
+                name: "Test 1",
                 price: 65,
                 image: hagoromo1,
                 route: "newegg0",
@@ -175,7 +175,7 @@ export const STORES_INFO = [
             },
             {
                 id: 1,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 1",
                 price: 70,
                 image: hagoromo1,
                 route: "newegg1",
@@ -183,7 +183,7 @@ export const STORES_INFO = [
             },
             {
                 id: 2,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 2",
                 price: 75,
                 image: hagoromo1,
                 route: "newegg2",
@@ -191,7 +191,7 @@ export const STORES_INFO = [
             },
             {
                 id: 3,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 3",
                 price: 80,
                 image: hagoromo1,
                 route: "newegg3",
@@ -200,7 +200,7 @@ export const STORES_INFO = [
             ,
             {
                 id: 4,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 4",
                 price: 80,
                 image: hagoromo1,
                 route: "newegg4",
@@ -209,7 +209,7 @@ export const STORES_INFO = [
             ,
             {
                 id: 5,
-                name: "Hagaromo Chalk",
+                name: "Hagaromo Chalk 5",
                 price: 80,
                 image: hagoromo1,
                 route: "newegg5",
