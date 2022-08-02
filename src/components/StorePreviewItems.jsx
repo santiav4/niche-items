@@ -121,6 +121,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                             sx={{
                                 marginBottom: "5px",
                                 width: "120px",
+                                maxHeight: "94",
                                 borderRadius: "10px",
                                 backgroundColor: "#FF4D4E",
                                 "&:hover": {

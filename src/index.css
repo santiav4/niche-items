@@ -10,6 +10,8 @@
 
 html {
     /* overflow-x: hidden !important; */
+    height: 100vh;
+    background-color: #edebe0;
 }
 
 body {
@@ -39,6 +41,10 @@ code {
     /* overflow-x: hidden; */
     /* position: relative; */
     /* check styled component  */
+}
+
+.body-nav-margin {
+    margin-top: 100px;
 }
 
 /* =================================== */
@@ -103,6 +109,7 @@ code {
 /* =================================== */
 /* Homepage                            */
 /*==================================== */
+
 .home-cards {
     border: 1px solid #ada79b;
     border-radius: 20px;
@@ -120,7 +127,6 @@ code {
 /*==================================== */
 
 .all-items {
-    background-color: #eae7dc;
     padding: 0 10px;
 }
 
@@ -130,7 +136,7 @@ code {
     border: 1px solid #ada79b;
 
     width: 175px;
-    margin-bottom: 10px;
+    margin: 0 8px 8px 0;
     /* padding: 2px; */
 
     text-decoration: none;

@@ -7,6 +7,7 @@ import AllItems from "./components/AllItems";
 import Navbar from "./components/Navbar";
 import ItemPage from "./components/ItemPage";
 import { STORES_INFO } from "./data";
+import ButtonAppBar from "./components/ButtonAppBar";
 
 function App() {
     const [storeName, setStoreName] = useState("");
@@ -22,7 +23,8 @@ function App() {
     return (
         <AppBox className="App">
             {/* <TopNav /> */}
-            <Navbar />
+            <ButtonAppBar />
+            {/* <Navbar /> */}
             <Routes>
                 <Route
                     path="/"

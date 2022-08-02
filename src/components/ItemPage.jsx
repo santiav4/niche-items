@@ -38,9 +38,9 @@ const ItemPage = ({ storeName }) => {
 
     return (
         <div
+            className="body-nav-margin"
             style={{
                 height: "100vh",
-                backgroundColor: "#edebe0",
                 padding: "0 10px",
             }}>
             {/* ItemPage of {storeName} and item is {store.itemName[name]} */}

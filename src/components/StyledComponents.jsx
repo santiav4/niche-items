@@ -9,6 +9,8 @@ export const AppBox = styled(Box)(() => ({
     color: "#3e4855",
     position: "relative",
     backgroundColor: "#edebe0",
+    minWidth: "374px",
+    height: "100%",
 }));
 export const Stepper = styled(MobileStepper)(() => ({
     color: "#3e4855",

@@ -9,20 +9,20 @@ import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer.jsx";
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
-    const handleDrawerOpen = () => {
-        console.log("Open Menu");
-        setIsOpen(true);
-    };
+    // const handleDrawerOpen = () => {
+    //     console.log("Open Menu");
+    //     setIsOpen(true);
+    // };
 
-    const handleDrawerClose = () => {
-        setIsOpen(false);
-    };
+    // const handleDrawerClose = () => {
+    //     setIsOpen(false);
+    // };
 
-    useEffect(() => {
-        console.log("use effect");
-    }, [isOpen]);
+    // useEffect(() => {
+    //     console.log("use effect");
+    // }, [isOpen]);
 
     return (
         <div className="navbar" style={{}}>

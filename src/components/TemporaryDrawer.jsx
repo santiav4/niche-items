@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 
 import { HiMenuAlt1 } from "react-icons/hi";
 import { GrClose } from "react-icons/gr";
+import { Typography } from "@mui/material";
 
 export default function TemporaryDrawer({ stores }) {
     const [state, setState] = React.useState({
@@ -37,43 +38,49 @@ export default function TemporaryDrawer({ stores }) {
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
-            sx={{ marginRight: "20px" }}
-            className="okokokok">
-            <List>
-                {["Inbox", "Starred", "Send email", "Drafts"].map(
-                    (text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <Link
-                                to={"/"}
-                                style={{
-                                    textDecoration: "none",
-                                    color: "inherit",
-                                }}>
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? (
-                                            <InboxIcon />
-                                        ) : (
-                                            <MailIcon />
-                                        )}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
-                                </ListItemButton>
-                            </Link>
-                        </ListItem>
-                    )
-                )}
-            </List>
-            <Divider />
-            <List>
-                {["All mail", "Trash", "Spam"].map((text, index) => (
-                    <ListItem key={text} disablePadding>
+            sx={{
+                marginRight: "20px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+            }}>
+            <List sx={{}}>
+                <ListItem disablePadding>
+                    <Link
+                        to={`/`}
+                        style={{
+                            textDecoration: "none",
+                            color: "inherit",
+                        }}>
                         <ListItemButton>
                             <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                <MailIcon />
                             </ListItemIcon>
-                            <ListItemText primary={text} />
+                            <ListItemText primary="Home" />
                         </ListItemButton>
+                    </Link>
+                </ListItem>
+                {stores.map((store, index) => (
+                    <ListItem key={index} disablePadding>
+                        <Link
+                            to={`/${store.store}`}
+                            style={{
+                                textDecoration: "none",
+                                color: "inherit",
+                            }}>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    {index % 2 === 0 ? (
+                                        <InboxIcon />
+                                    ) : (
+                                        <MailIcon />
+                                    )}
+                                </ListItemIcon>
+                                <ListItemText
+                                    primary={store.store.replace(/-/gi, " ")}
+                                />
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
@@ -84,7 +91,10 @@ export default function TemporaryDrawer({ stores }) {
         <div>
             {["right"].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <HiMenuAlt1 size={32} onClick={toggleDrawer(anchor, true)}>
+                    <HiMenuAlt1
+                        style={{ color: "#3e4855" }}
+                        size={32}
+                        onClick={toggleDrawer(anchor, true)}>
                         {anchor}
                     </HiMenuAlt1>
                     <Drawer

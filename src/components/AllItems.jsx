@@ -11,7 +11,7 @@ const AllItems = () => {
     console.log(store);
 
     return (
-        <Box className="all-items">
+        <Box className="all-items body-nav-margin">
             <Box>
                 <Typography variant="h6" component="div" gutterBottom>
                     {id.replace(/-/gi, " ")}/All Items
@@ -27,7 +27,7 @@ const AllItems = () => {
             <Box
                 sx={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    // justifyContent: "space-between",
                     flexWrap: "wrap",
                 }}>
                 {store.allItems.map((item) => (
