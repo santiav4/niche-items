@@ -6,7 +6,11 @@ import { Link as RouterLink, useParams } from "react-router-dom";
 import Carousel from "./Carousel";
 import Link from "@mui/material/Link";
 
+import { useMediaQuery } from "@mui/material";
+import { useTheme, styled } from "@mui/material/styles";
+
 const StorePreviewItems = ({ store, handleStoreId }) => {
+    // const theme = useTheme();
     const [sliderStep, setSliderStep] = useState(0);
 
     const handleNextSlide = () => {
@@ -29,13 +33,19 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
     }, [sliderStep]);
 
     return (
-        <div
+        <Box
             className="home-cards"
-            style={{
-                marginBottom: "25px",
+            sx={{
+                marginBottom: "20px",
                 zIndex: "9",
                 paddingTop: "10px",
                 padding: "10px 20px",
+                maxWidth: "370px",
+                marginInline: {
+                    mobile: "10px",
+                    tablet: "10px",
+                    desktop: "10px",
+                },
             }}>
             <Typography
                 sx={{
@@ -164,7 +174,7 @@ const StorePreviewItems = ({ store, handleStoreId }) => {
                     handlePrevSlide={handlePrevSlide}
                 />
             </Box>
-        </div>
+        </Box>
     );
 };
 

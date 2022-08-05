@@ -9,9 +9,19 @@ import StorePreviewItems from "./StorePreviewItems";
 
 const HomeStore = ({ handleStoreId }) => {
     const stores = STORES_INFO;
+    console.log(stores.length);
     let { id } = useParams();
     return (
-        <Box className="home-body body-nav-margin" sx={{ padding: "0 10px" }}>
+        <Box
+            className="home-body body-nav-margin"
+            sx={{
+                padding: "0 10px",
+                display: "flex",
+                flexWrap: "wrap",
+                width: "90%",
+                marginInline: "auto",
+                justifyContent: "center",
+            }}>
             {stores.map((store) => (
                 <StorePreviewItems
                     key={store.id}

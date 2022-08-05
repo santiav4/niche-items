@@ -11,7 +11,7 @@ const AllItems = () => {
     console.log(store);
 
     return (
-        <Box className="all-items body-nav-margin">
+        <Box className="all-items body-nav-margin" sx={{}}>
             <Box>
                 <Typography variant="h6" component="div" gutterBottom>
                     {id.replace(/-/gi, " ")}/All Items
@@ -27,39 +27,92 @@ const AllItems = () => {
             <Box
                 sx={{
                     display: "flex",
-                    // justifyContent: "space-between",
+                    justifyContent: {
+                        mobile: "center",
+                        tablet: "center",
+                        desktop: "center",
+                    },
                     flexWrap: "wrap",
                 }}>
                 {store.allItems.map((item) => (
-                    <RouterLink
+                    <Box
                         className="all-items-card"
-                        to={`/${id}/${item.route}`}
-                        key={item.id}>
-                        <Box className="all-items-image-container">
+                        sx={{
+                            width: {
+                                mobile: "175px",
+                                tablet: "230px",
+                                desktop: "300px",
+                            },
+                            height: {
+                                mobile: "200px",
+                                tablet: "250px",
+                                desktop: "300px",
+                            },
+                            transition: "all 500ms",
+                            "&:hover": {
+                                backgroundColor: "#CFBEA9",
+                            },
+                        }}>
+                        <RouterLink
+                            to={`/${id}/${item.route}`}
+                            key={item.id}
+                            style={{
+                                textDecoration: "none",
+                                color: "#3e4855",
+                            }}>
                             <Box
-                                className="all-items-image"
+                                className="all-items-image-container"
                                 sx={{
-                                    backgroundSize: "100%,100%",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundImage: `url(${item.image})`,
-                                    height: "100%",
-                                }}></Box>
-                        </Box>
-                        <Typography
-                            variant="subtitle1"
-                            component="div"
-                            gutterBottom
-                            sx={{ marginLeft: "5px", textAlign: "center" }}>
-                            {item.name}
-                        </Typography>
-                        <Typography
-                            variant="subtitle1"
-                            component="div"
-                            gutterBottom
-                            sx={{ marginLeft: "5px", textAlign: "center" }}>
-                            Price: ${item.price}.00
-                        </Typography>
-                    </RouterLink>
+                                    height: {
+                                        mobile: "120px",
+                                        tablet: "155px",
+                                        desktop: "200px",
+                                    },
+                                }}>
+                                <Box
+                                    className="all-items-image"
+                                    sx={{
+                                        backgroundSize: "100%,100%",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundImage: `url(${item.image})`,
+                                        height: "100%",
+                                    }}></Box>
+                            </Box>
+                            <Typography
+                                variant="subtitle1"
+                                component="div"
+                                gutterBottom
+                                sx={{
+                                    marginTop: {
+                                        mobile: "10px",
+                                        tablet: "20px",
+                                        desktop: "25px",
+                                    },
+                                    marginLeft: "5px",
+                                    textAlign: "center",
+                                    fontWeight: "600",
+                                    "&:hover": {
+                                        textDecoration: "underline",
+                                    },
+                                }}>
+                                {item.name}
+                            </Typography>
+                            <Typography
+                                variant="subtitle1"
+                                component="div"
+                                gutterBottom
+                                sx={{
+                                    marginLeft: "5px",
+                                    textAlign: "center",
+                                    fontWeight: "500",
+                                    "&:hover": {
+                                        textDecoration: "underline",
+                                    },
+                                }}>
+                                Price: ${item.price}.00
+                            </Typography>
+                        </RouterLink>
+                    </Box>
                 ))}
             </Box>
         </Box>

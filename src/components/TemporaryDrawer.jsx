@@ -53,9 +53,9 @@ export default function TemporaryDrawer({ stores }) {
                             color: "inherit",
                         }}>
                         <ListItemButton>
-                            <ListItemIcon>
+                            {/* <ListItemIcon>
                                 <MailIcon />
-                            </ListItemIcon>
+                            </ListItemIcon> */}
                             <ListItemText primary="Home" />
                         </ListItemButton>
                     </Link>
@@ -69,13 +69,13 @@ export default function TemporaryDrawer({ stores }) {
                                 color: "inherit",
                             }}>
                             <ListItemButton>
-                                <ListItemIcon>
+                                {/* <ListItemIcon>
                                     {index % 2 === 0 ? (
                                         <InboxIcon />
                                     ) : (
                                         <MailIcon />
                                     )}
-                                </ListItemIcon>
+                                </ListItemIcon> */}
                                 <ListItemText
                                     primary={store.store.replace(/-/gi, " ")}
                                 />

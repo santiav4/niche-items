@@ -16,7 +16,7 @@ html {
 
 body {
     margin: 0;
-
+    /* font-family: "Jost", sans-serif; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif;
@@ -24,7 +24,7 @@ body {
     /* color: #3e4855; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
 }
 
 .slider-container {
@@ -128,6 +128,8 @@ code {
 
 .all-items {
     padding: 0 10px;
+    width: 80%;
+    margin-inline: auto;
 }
 
 .all-items-card {
@@ -135,7 +137,6 @@ code {
     border-radius: 20px;
     border: 1px solid #ada79b;
 
-    width: 175px;
     margin: 0 8px 8px 0;
     /* padding: 2px; */
 

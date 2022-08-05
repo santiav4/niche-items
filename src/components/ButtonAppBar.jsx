@@ -7,11 +7,17 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
+import { useMediaQuery } from "@mui/material";
+import { useTheme, styled } from "@mui/material/styles";
+
 import { Link } from "react-router-dom";
 import { STORES_INFO as stores } from "../data.js";
 import TemporaryDrawer from "./TemporaryDrawer.jsx";
+import HeaderMenu from "./HeaderMenu.jsx";
 
 export default function ButtonAppBar() {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up("tablet"));
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar sx={{ backgroundColor: "#edebe0" }}>
@@ -29,11 +35,12 @@ export default function ButtonAppBar() {
                             variant="h4"
                             component="div"
                             sx={{ flexGrow: 1, fontWeight: "bold" }}>
-                            Logo
+                            Niche Items
                         </Typography>
                     </Link>
 
-                    <TemporaryDrawer stores={stores} />
+                    {!matches && <TemporaryDrawer stores={stores} />}
+                    {matches && <HeaderMenu stores={stores} />}
                 </Toolbar>
             </AppBar>
         </Box>

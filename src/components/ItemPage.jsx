@@ -37,11 +37,17 @@ const ItemPage = ({ storeName }) => {
     // console.log("index of item Name:", name);
 
     return (
-        <div
+        <Box
             className="body-nav-margin"
-            style={{
+            sx={{
                 height: "100vh",
                 padding: "0 10px",
+                width: {
+                    mobile: "380px",
+                    tablet: "500px",
+                    desktop: "700px",
+                },
+                marginInline: "auto",
             }}>
             {/* ItemPage of {storeName} and item is {store.itemName[name]} */}
             <Box>
@@ -117,7 +123,7 @@ const ItemPage = ({ storeName }) => {
                 </Link>
             </Box>
             {/* <Divider /> */}
-        </div>
+        </Box>
     );
 };
 

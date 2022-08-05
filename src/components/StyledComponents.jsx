@@ -10,9 +10,24 @@ export const AppBox = styled(Box)(() => ({
     position: "relative",
     backgroundColor: "#edebe0",
     minWidth: "374px",
-    height: "100%",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+
+    justifyContent: "space-between",
 }));
 export const Stepper = styled(MobileStepper)(() => ({
     color: "#3e4855",
     overflowX: "hidden",
 }));
+
+export const theme = createTheme({
+    breakpoints: {
+        values: {
+            mobile: 0,
+            tablet: 768,
+            laptop: 1024,
+            desktop: 1200,
+        },
+    },
+});
